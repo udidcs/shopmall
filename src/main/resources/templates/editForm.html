@@ -8,12 +8,10 @@
   <div class="container">
     <h1 class="display-3">회원 수정</h1>
   </div>
-  <p>
   <div class="container">
     <h5 th:if="${session.manager}" style="color:red">판매 매니저입니다</h5>
     <h5 th:if="!${session.manager}" style="color:red">판매 매니저가 아닙니다</h5>
   </div>
-  </p>
 </div>
   <div class="container">
     <form name="newMember" class="form-horizontal"

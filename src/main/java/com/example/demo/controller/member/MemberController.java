@@ -1,16 +1,22 @@
 package com.example.demo.controller.member;
 
+import com.example.demo.dto.Member;
 import com.example.demo.repository.MemberRepository;
+import com.example.demo.service.member.MemberService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+@RequiredArgsConstructor
 @Controller
 public class MemberController {
 
+    private final MemberService service;
     @GetMapping("/loginForm")
     public String loginForm() {
         return "loginForm";
@@ -25,8 +31,6 @@ public class MemberController {
     public String editForm() {
         return "editForm";
     }
-
-
     @GetMapping("/logout")
     public String logoutMember(HttpServletRequest req) {
         HttpSession session = req.getSession();
@@ -34,7 +38,6 @@ public class MemberController {
             session.invalidate();
         return "redirect:/home";
     }
-
     @GetMapping("/manager")
     public String manager(HttpServletRequest req) {
         HttpSession session = req.getSession();
@@ -54,13 +57,13 @@ public class MemberController {
     }
 
     @PostMapping("/memberForm")
-    public String addMember(HttpServletRequest req) {
+    public String addMember(@ModelAttribute Member mem, HttpServletRequest req) {
 
-        MemberRepository repository;
+        service.join(mem);
+
         System.out.println("회원 가입 완료");
         HttpSession session = req.getSession(true);
         session.setAttribute("logged", "True");
-
         return "redirect:/home";
     }
 
