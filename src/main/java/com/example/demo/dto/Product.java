@@ -2,19 +2,23 @@ package com.example.demo.dto;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Data
+@Entity
 public class Product {
+
+	@Id
 	private String productId;
 	private String pname;
 	private Integer unitPrice;
 	private String description;
 	private String manufacturer;
 	private String category;
-	private long unitsInStock;
+	private Integer unitsInStock;
 	private String condition;
 	private String filename;
-	private int quantity;
+	private Integer quantity;
 
-	
-	
 }

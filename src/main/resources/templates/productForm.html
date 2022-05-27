@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="container">
-    <form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
+    <form name="newProduct" action="/upload" class="form-horizontal" method="post" enctype="multipart/form-data">
         <div class="form-group row">
             <label class="col-sm-2">상품  코드</label>
             <div class="col-sm-3">
@@ -64,8 +64,7 @@
         <div class="form-group row">
             <label class="col-sm-2"></label>
             <div class="col-sm-5">
-                <input type="file" name="productImage2" class="form-control">
-
+                <input type="file" name="pdtimg" class="form-control">
             </div>
         </div>
         <div class="form-group row">
@@ -75,7 +74,7 @@
         </div>
     </form>
 </div>
-<script type="text/javascript" src="addProduct.js" charset="utf-8">
+<script type="text/javascript" src="productForm.js" charset="utf-8">
 </script>
 <div th:replace="~{footer::footer}">
 </div>

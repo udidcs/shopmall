@@ -60,7 +60,6 @@ public class MemberController {
     public String addMember(@ModelAttribute Member mem, HttpServletRequest req) {
 
         service.join(mem);
-
         System.out.println("회원 가입 완료");
         HttpSession session = req.getSession(true);
         session.setAttribute("logged", "True");

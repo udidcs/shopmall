@@ -12,7 +12,6 @@ import javax.transaction.Transactional;
 @Service
 @RequiredArgsConstructor
 public class MemberService {
-
     private final MemberRepository repository;
 
     public void join(Member member) {
