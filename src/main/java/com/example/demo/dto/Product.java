@@ -11,13 +11,13 @@ public class Product {
 
 	@Id
 	private String productId;
-	private String pname;
+	private String name;
 	private Integer unitPrice;
 	private String description;
 	private String manufacturer;
 	private String category;
 	private Integer unitsInStock;
-	private String condition;
+	private String status;
 	private String filename;
 	private Integer quantity;
 
